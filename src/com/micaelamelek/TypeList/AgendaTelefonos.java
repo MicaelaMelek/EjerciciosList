@@ -7,35 +7,35 @@ import java.util.TreeMap;
 
 public class AgendaTelefonos {
 
-	private Map<String, Integer> agenda;
+	private Map<String, Integer> mAgenda;
 
 	public AgendaTelefonos() {
-		this.agenda = new TreeMap<String, Integer>();
+		mAgenda = new TreeMap<String, Integer>();
 
 	}
 
 	public Map<String, Integer> getAgenda() {
-		return this.agenda;
+		return mAgenda;
 	}
 
 	public void AgregarC(String nombre, int numero) {
-		this.agenda.put(nombre, numero);
+		mAgenda.put(nombre, numero);
 		System.out.println("Se agrego el contacto: " + nombre);
 	}
 
 	public void EliminarC(String nombre) {
-		this.agenda.remove(nombre);
+		this.mAgenda.remove(nombre);
 	}
 
 	public void MostrarAgenda() {
-		for (Map.Entry<String, Integer> entry : agenda.entrySet()) {
+		for (Map.Entry<String, Integer> entry : mAgenda.entrySet()) {
 			System.out.println("Nombre: " + entry.getKey() + ". Telefono: "
 					+ entry.getValue());
 		}
 	}
 
 	public void buscarNombre(Integer telefono) {
-		for (Entry<String, Integer> entry : agenda.entrySet()) {
+		for (Entry<String, Integer> entry : mAgenda.entrySet()) {
 			if (telefono.equals(entry.getValue())) {
 				System.out.println("El telefono " + telefono + " es: "
 						+ entry.getKey());
@@ -49,7 +49,7 @@ public class AgendaTelefonos {
 
 	public void buscarTelefono(String nombre) {
 
-		for (Entry<String, Integer> entry : agenda.entrySet()) {
+		for (Entry<String, Integer> entry : mAgenda.entrySet()) {
 			if (nombre.equals(entry.getKey())) {
 				System.out.println("El contacto " + nombre
 						+ " le corresponde el telefono: " + entry.getValue());
